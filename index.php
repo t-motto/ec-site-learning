@@ -46,19 +46,22 @@
 //商品データ
 $products = [
     [
+        'id'    => '1',
         'name'  => 'ノートPC', 
         'price' => 89800,
-        'image' => 'https://via.placeholder.com/200x150?text=ノートPC'
+        'image' => 'https://picsum.photos/200/150?random=1'
     ],
     [
+        'id'    => '2',
         'name' => 'マウス',
         'price' => 2980,
-        'image' => 'https://via.placeholder.com/200x150?text=マウス'
+        'image' => 'https://picsum.photos/200/150?random=2'
     ],
     [
+        'id'    => '3',
         'name' => 'キーボード',
         'price' => 5980,
-        'image' => 'https://via.placeholder.com/200x150?text=キーボード'
+        'image' => 'https://picsum.photos/200/150?random=3'
     ],
 ];   
 
@@ -66,7 +69,7 @@ $products = [
 foreach($products as $product){
     echo '<div class="product">';
     echo '<img src="' . $product['image'] . '" alt= "' . $product['name'] . '">';
-    echo '<h3>' . $product['name'] . '</h3>';
+    echo '<h3><a href="product.php?id=' . $product['id'] . '">' . $product['name'] . '</a></h3>';
     echo '<p class="price">価格: ¥' . number_format($product['price']) . '</p>';
     echo '</div>';
 }
